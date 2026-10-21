@@ -26,15 +26,12 @@ public class Polygon {
 
     public double getLength(){
         double length = 0 ;
-        int c1,c2;
-        for (int i = 0; i < points.length - 1 ; i++){
-            c1 = points[i+1].getX() - points[i].getX();
-            c2 = points[i+1].getY() - points[i].getY();
-            length += Math.sqrt(c1 * c1 + c2 * c2);
+        for (int i = 0; i < points.length - 1 ; i++) {
+            Segment side = new Segment(points[i], points[i + 1]);
+            length += side.getModule();
         }
-        c1 = points[0].getX() - points[points.length - 1].getX();
-        c2 = points[0].getY() - points[points.length - 1].getY();
-        length += Math.sqrt(c1 * c1 + c2 * c2);
+        Segment side = new Segment(points[points.length-1], points[0]);
+        length += side.getModule();
         return length;
     }
 

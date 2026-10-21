@@ -1,10 +1,6 @@
 public class MainPolygon {
     public static void main(String[] args) {
-        Point[] points = new Point[4];
-        points[0] = new Point(5,9);
-        points[1] = new Point(9,2);
-        points[2] = new Point(-1,9);
-        points[3] = new Point(2,0);
+        Point[] points = {new Point(5,5), new Point(5,20), new Point(10,20), new Point(10,5) };
         Polygon p = new Polygon(points);
         System.out.println(p);
         double l = p.getLength();
